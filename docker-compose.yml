@@ -10,7 +10,7 @@ services:
       POSTGRES_USER: product_user   # username
       POSTGRES_PASSWORD: product_pass  # password
     ports:
-      - "5432:5432"                 # makes the DB reachable from your app at localhost:5432
+      - "5433:5432"                 # host port 5433 -> container 5432 (avoids clashing with native PostgreSQL on 5432)
     volumes:
       - product-db-data:/var/lib/postgresql/data  # keeps your data even after restart
 
